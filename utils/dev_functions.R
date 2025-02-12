@@ -163,7 +163,7 @@ init_project_files <- function() {
 
     current_name <- rproj_files[1]
 
-    if (current_name != "p3_analysis.Rproj") {
+    if (current_name != "rP3Template.Rproj") {
         # Name is already updated
         return()
     }
@@ -194,6 +194,7 @@ init_project_files <- function() {
     }
 
     if (!file.exists("DESCRIPTION")) {
+        warning("no file DESCRIPTION found")
         return()
     }
     desciption_content <- readLines("DESCRIPTION")
