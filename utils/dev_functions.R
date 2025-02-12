@@ -135,26 +135,12 @@ source_index <- function(..., script) {
 
 init_project_files <- function() {
 
-    # Generate a simple project ID without dependencies
-    generate_project_id <- function() {
-        random_hex <- function(n) {
-            paste0(sample(c(0:9, letters[1:6]), n, replace = TRUE), collapse = "")
-        }
-        paste(
-            random_hex(8),
-            random_hex(4),
-            random_hex(4),
-            random_hex(4),
-            random_hex(12),
-            sep = "-"
-        )
-    }
-
-
     # Get current directory name as default new name
     current_dir <- basename(getwd())
     # Find the .Rproj file
     rproj_files <- list.files(pattern = "\\.Rproj$")
+
+    description_file <- "DESCRIPTION"
 
     if (length(rproj_files) != 1) {
         warning("Expected exactly one .Rproj file, found ", length(rproj_files))
@@ -193,11 +179,13 @@ init_project_files <- function() {
 
     }
 
-    if (!file.exists("DESCRIPTION")) {
+
+
+    if (!file.exists(description_file)) {
         warning("no file DESCRIPTION found")
         return()
     }
-    desciption_content <- readLines("DESCRIPTION")
+    desciption_content <- readLines(description_file)
     if (desciption_content[1] == "Package: rP3Template") {
         # Remove .Rproj extension if present
         new_name <- sub("\\.Rproj$", "", new_name)
@@ -221,9 +209,24 @@ init_project_files <- function() {
         }
 
         desciption_content[1] <- paste0("Package: ", package_name)
-        writeLines(desciption_content, desc_file)
+        writeLines(desciption_content, description_file)
         message("Updated package name in DESCRIPTION to: ", package_name)
     }
+}
+
+# Generate a simple project ID without dependencies
+generate_project_id <- function() {
+    random_hex <- function(n) {
+        paste0(sample(c(0:9, letters[1:6]), n, replace = TRUE), collapse = "")
+    }
+    paste(
+        random_hex(8),
+        random_hex(4),
+        random_hex(4),
+        random_hex(4),
+        random_hex(12),
+        sep = "-"
+    )
 }
 
 # Make valid R package name
