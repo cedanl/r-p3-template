@@ -1,7 +1,7 @@
-<p align="center"><img src="src/assets/p3_logo.png" alt="P3 Template"></p> <h1 align="center">P3 Template | Project, Process, Presentation</h1> <div align="center"> <strong>🚀 Comprehensive R Project Structure for Efficient Workflows 🛠️</strong> <br> A template designed to streamline your R projects from setup to final presentation. <br> <sub>Ideal for data scientists, researchers, and R developers seeking a standardized project structure</sub> 
+<p align="center"><img src="src/assets/p3_logo.png" alt="P3 Template"></p> <h1 align="center">P3 Template | Project, Process, Presentation</h1> <div align="center"> <strong>🚀 Comprehensive R Project Structure for Efficient Workflows 🛠️</strong> <br> A template designed to streamline your R projects from setup to final presentation, powered by LLMs. <br> <sub>Ideal for data scientists, researchers, and R developers seeking a standardized project structure</sub> 
 
 
-<sub>The ultimate R project template. Built with ❤︎ by <a href="https://github.com/cedanl">cedanl</a> and <a href="https://github.com/cedanl/r-p3-template/graphs/contributors"> contributors </a> 
+<sub>The R project template. Built with ❤︎ by <a href="https://github.com/cedanl">cedanl</a> and <a href="https://github.com/cedanl/r-p3-template/graphs/contributors"> contributors </a> 
 </sub> 
 
 </div>
@@ -10,12 +10,10 @@
 ## 📋 Table of Contents
 
 - [Motivation](#-motivation)
-- [Overview](#-overview)
+- [What P3 Stans For](#-what-p3-stands-for)
 - [Quick Start](#-quick-start)
 - [Features](#-features)
 - [Project Structure](#-project-structure)
-- [Process and Workflow](#-process-and-workflow)
-- [Presentation and Output](#-presentation-and-output)
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Additional Resources](#-additional-resources)
@@ -23,21 +21,16 @@
 
 ## 💡 Motivation
 
-The P3 Template addresses common challenges in R project organization and reproducibility. It provides a standardized structure that:
-- Enhances collaboration and code sharing
+The P3 Template addresses common challenges in R project start-up, organization and reproducibility. It provides a standardized structure that:
+- Enables secure and high-performance LLM-usage from the IDE.
 - Improves project maintainability
-- Ensures reproducibility across different environments
-- Streamlines the transition from analysis to presentation
-
-## 📋 Overview
-P3 Template is a comprehensive R project structure designed to streamline your workflow from project setup to final presentation. It integrates best practices in package management, folder structure, and reproducible research.
+- Streamlines the transition from explorative analysis to final presentation
 
 ### What P3 Stands For:
 
-- Project: A complete, well-organized codebase
-- Process: An efficient, reproducible workflow
-- Presentation: Professional, adaptable outputsThis updated banner reflects the content and purpose of the P3 Template as described in the README. It emphasizes the three main aspects: Project, Process, and Presentation, while highlighting key features and sections of the template
-
+- Project: A complete, well-organized codebase with good practices incorporated
+- Process: A way-of-work and guide to help you being more productive
+- Presentation: Professional, adaptable and beautiful outputs
 
 ## 🚀 Quick Start
 
@@ -56,94 +49,57 @@ Setup script detected. Run 00_setup.R? (press ENTER to run, ESC to skip):
 ```
 5. 🚧 Explore the template🚧:
 - Open how-to.qmd for a step-by-step guide 
-- Customize the project structure and scripts as needed
 
-6. Start your analysis by creating a new Quarto document:
-
-```
-quarto_create("my_analysis.qmd")
-```
+6. To see the use of this template in other projects look instroomprognose-mbo.
 
 ### Troubleshooting:
 - If you encounter package installation issues, try updating R and RStudio to their latest versions.
 - For renv-related problems, refer to the [renv documentation](https://rstudio.github.io/renv/articles/renv.html).
 
-
 ## 🌟 Features
 
-- Standardized project structure following R package conventions
+- Quarto-based workflow  
+  - Quick stream-of-consciousness programming (literate programming)
+  - Easily move code from development to production due due to render-functionality
+  - Documentation is directly next to the code
+  - Export text and code output (tables and visualisation) quickly to pptx, html and pdf
+- Standardized project structure following R package conventions (functional programming)
+  - This enables automated code checks and clear structure
 - Integrated renv for reproducible package management
-- Quarto-based workflow for literate programming
-- Pre-configured .gitignore, .Rbuildignore, and .Rprofile
-- Synthetic data generation for quick start and testing
-- Config.yaml for easy customization of project defaults
+  - Built-in tidyverse packages
+  - Built-in LLM-enabling package and settings
+  - No interference with other locally installed R packages
 - Automated setup script for quick initialization
-- Quarto-based tutorial (how-to.qmd) for interactive learning
+- Easy customization for project defaults
+- Data folders with synthetic and reference data synced and other data kept local
 
 ## 📁 Project Structure
 
-# 🚧
 🚧 The P3 Template follows a well-organized directory structure to enhance productivity and maintainability. Here's an overview of the key directories: 
-
 
 ```
 project-root/
 ├── data/
 │   └── synthetic/       # Synthetic data for testing and examples
+│   └── reference/       # Reference data like mapping tables etc can be shared widely
 ├── man/                 # Auto-generated documentation
 ├── R/                   # R functions and scripts
-└── utils/               # Utility files and tools
-    ├── pal_prompts/     # AI assistant prompts
-    ├── proj_settings/   # Project-specific settings
-    └── renv/            # R environment management
-        └── library/     # Package library (managed by renv)
+└── utils/               # Utility files and tools, all adaptable by user
+    ├── pal_prompts/     # AI assistant prompts for 'chores' like documentation and testing
+├── how_to.qmd           # The how-to analysis file that demonstrates built-in functionality
+├── how_to_success.qmd   # Potential Quarto file after all instructions are worked through successfully
+├── how_to_success.html  # Visual presentation of success how-to
+├── 00_set_up.R          # Ensuring all basic steps are done and project is ready-for-analysis
+├── config.yml           # Configuration settings, like which data folder to use (by default synthetic)
 
 ```
 
-### Key Directories:
-
-- data/: Store your project data here. The synthetic/ subdirectory is provided for sample or test data.
-- man/: Contains auto-generated documentation for your R functions.
-- R/: Place all your R scripts and functions in this directory.
-- utils/: Houses various utility files and tools:
-    - pal_prompts/: Stores prompts for AI assistants, enhancing reproducibility in AI-assisted development.
-    - proj_settings/: Contains project-specific configuration files.
-    - renv/: Manages the R environment, ensuring reproducibility across different systems.
-
-This structure follows R package conventions, making it easier to use standard R tools and potentially transition your project into a package if needed. The renv setup ensures consistent package versions across different environments, crucial for reproducibility in data science projects.
-
-## 📊 Process and Workflow
-
-# 🚧
-
-The P3 Template supports modern data science workflows:
-
-- Embraces literate programming principles using Quarto
-- Supports both R and Python code blocks
-- Encourages modular code structure:
-    1. Write analysis in Quarto (.qmd) files
-    2. Develop reusable functions in the R/ directory
-    3. Use load_all() for quick function development iteration
-    4. Keep Quarto documents focused on high-level analysis flow
-
-## 🎨 Presentation and Output
-
-# 🚧
-
-- Supports multiple output formats through Quarto:
-    - PDF reports
-    - PowerPoint presentations
-    - Interactive websites
-    - Comprehensive books or long-form documents
-- Automatically saves generated visuals for easy reuse
-- Enables clear and reproducible delivery of results to stakeholders
 
 ## 🤝 Contributing
 
-- Thank you Npuls for providing the opportunity to develop this package
-- Thank you co-workers from everywhere for your interesting questions regarding switch
-- Thank you Bram, Tomer, Amir, Tony, Theo, Ash, Steven, Caspar, Shirley and Martine for your valuable input
-
+- Thanks to [Npuls](https://npuls.nl/) for providing the opportunity to develop this package
+- Thank you to CEDA-colleagues for stimulating conversations and feedback Bram, Tomer, Amir, Tony, Theo, Ash, Steven, Caspar, Shirley and Martine
+- Thanks to SURF Developer Program for sparking interest in templates
 
 
 Contribute as well! Please see our Contributing Guide for details. 
@@ -153,8 +109,6 @@ Key ways to contribute:
 - Report bugs or suggest features by opening an issue
 - Submit pull requests for bug fixes or new features
 - Improve documentation or add usage examples
-
-
 
 
 ## 📄 License
