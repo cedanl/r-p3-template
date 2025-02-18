@@ -9,9 +9,9 @@
 
 ## 📋 Table of Contents
 
+- [Motivation](#-motivation)
 - [Overview](#-overview)
 - [Quick Start](#-quick-start)
-- [Motivation](#-motivation)
 - [Features](#-features)
 - [Project Structure](#-project-structure)
 - [Process and Workflow](#-process-and-workflow)
@@ -19,6 +19,15 @@
 - [Contributing](#-contributing)
 - [License](#-license)
 - [Additional Resources](#-additional-resources)
+
+
+## 💡 Motivation
+
+The P3 Template addresses common challenges in R project organization and reproducibility. It provides a standardized structure that:
+- Enhances collaboration and code sharing
+- Improves project maintainability
+- Ensures reproducibility across different environments
+- Streamlines the transition from analysis to presentation
 
 ## 📋 Overview
 P3 Template is a comprehensive R project structure designed to streamline your workflow from project setup to final presentation. It integrates best practices in package management, folder structure, and reproducible research.
@@ -33,66 +42,32 @@ P3 Template is a comprehensive R project structure designed to streamline your w
 ## 🚀 Quick Start
 
 1. Ensure you have R (>= 4.0.0) and RStudio installed.
-2. Install required packages:
-```
-install.packages(c("renv", "quarto")) 
-```
-3. Click "Use this template" in the top right corner
-4.  Clone your new repository and navigate to it:
+
+2. Click "Use this template" in the top right corner
+3.  Clone your new repository and navigate to it:
 
 ```
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
 ```
-5. Open the project in RStudio and run the setup script:
+4. Open the project in RStudio and run the setup script by clicking Enter:
 ```
-source("setup.R") 
+Setup script detected. Run 00_setup.R? (press ENTER to run, ESC to skip): 
 ```
-6. Explore the template:
-- Open how-to.qmd for a step-by-step guide
+5. 🚧 Explore the template🚧:
+- Open how-to.qmd for a step-by-step guide 
 - Customize the project structure and scripts as needed
 
-7. Start your analysis by creating a new Quarto document:
+6. Start your analysis by creating a new Quarto document:
+
 ```
-library(quarto)
 quarto_create("my_analysis.qmd")
 ```
-
-8. In your new document, use the project's structure:
-
-```
-# Load project-specific functions
-source("R/data_preparation.R")
-source("R/analysis_functions.R")
-
-# Prepare and analyze data
-data <- prepare_data("data/raw_data.csv")
-results <- analyze_data(data)
-
-# Visualize results
-plot_results(results)
-
-```
-
-9. Render your document to see the results:
-
-```
-quarto::quarto_render("my_analysis.qmd")
-
-```
-
 
 ### Troubleshooting:
 - If you encounter package installation issues, try updating R and RStudio to their latest versions.
 - For renv-related problems, refer to the [renv documentation](https://rstudio.github.io/renv/articles/renv.html).
 
-## 💡 Motivation
-
-The P3 Template addresses common challenges in R project organization and reproducibility. It provides a standardized structure that:
-- Enhances collaboration and code sharing
-- Improves project maintainability
-- Ensures reproducibility across different environments
-- Streamlines the transition from analysis to presentation
 
 ## 🌟 Features
 
@@ -106,7 +81,9 @@ The P3 Template addresses common challenges in R project organization and reprod
 - Quarto-based tutorial (how-to.qmd) for interactive learning
 
 ## 📁 Project Structure
-The P3 Template follows a well-organized directory structure to enhance productivity and maintainability. Here's an overview of the key directories:
+
+# 🚧
+🚧 The P3 Template follows a well-organized directory structure to enhance productivity and maintainability. Here's an overview of the key directories: 
 
 
 ```
@@ -135,9 +112,10 @@ project-root/
 
 This structure follows R package conventions, making it easier to use standard R tools and potentially transition your project into a package if needed. The renv setup ensures consistent package versions across different environments, crucial for reproducibility in data science projects.
 
-
-
 ## 📊 Process and Workflow
+
+# 🚧
+
 The P3 Template supports modern data science workflows:
 
 - Embraces literate programming principles using Quarto
@@ -150,6 +128,8 @@ The P3 Template supports modern data science workflows:
 
 ## 🎨 Presentation and Output
 
+# 🚧
+
 - Supports multiple output formats through Quarto:
     - PDF reports
     - PowerPoint presentations
@@ -160,11 +140,22 @@ The P3 Template supports modern data science workflows:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our Contributing Guide for details. Key ways to contribute:
+- Thank you Npuls for providing the opportunity to develop this package
+- Thank you co-workers from everywhere for your interesting questions regarding switch
+- Thank you Bram, Tomer, Amir, Tony, Theo, Ash, Steven, Caspar, Shirley and Martine for your valuable input
+
+
+
+Contribute as well! Please see our Contributing Guide for details. 
+
+Key ways to contribute:
 
 - Report bugs or suggest features by opening an issue
 - Submit pull requests for bug fixes or new features
 - Improve documentation or add usage examples
+
+
+
 
 ## 📄 License
 
